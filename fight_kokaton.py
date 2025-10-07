@@ -163,6 +163,7 @@ class Explosion:
         self.rct.center = bomb.rct.center
         self.life = 10
 
+
     def update(self, screen: pg.Surface):
         self.life -= 1 
         if self.life > 0:
@@ -190,7 +191,10 @@ def main():
         screen.blit(bg_img, [0, 0])
 
         for bomb in bombs:
-            if bomb is not None and bird.rct.colliderect(bomb.rct):
+             if bird.rct.colliderect(bomb.rct):
+                fonto = pg.font.Font(None, 80)
+                txt = fonto.render("Game Over", True, (255, 0, 0))
+                screen.blit(txt, [WIDTH//2-150, HEIGHT//2])
                 bird.change_img(8, screen)
                 pg.display.update()
                 time.sleep(1)
@@ -221,7 +225,7 @@ def main():
             exp.update(screen)
         score.update(screen)
         pg.display.update()
-        tmr += 1
+        tmr += 1 
         clock.tick(50)
 
 
