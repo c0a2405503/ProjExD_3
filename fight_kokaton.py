@@ -103,7 +103,7 @@ class Bird:
     # def update(self, screen: pg.Surface):
     #     """
     #     ビームを速度ベクトルself.vx, self.vyに基づき移動させる
-    #     引数 screen：画面Surface
+    #     引数 screen：画面Surfac
     #     """
     #     if check_bound(self.rct) == (True, True):
     #         self.rct.move_ip(self.vx, self.vy)
